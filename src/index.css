@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #000000;
+  color: #E6E8FA;
+  padding: 40px;
+  padding-top: 100px; 
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../src/img/luz.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: invert(0) brightness(1) sepia(1) hue-rotate(90deg) saturate(10);
+  z-index: -1;
+  opacity: 0.2;
+  transform: rotate(180deg);
+  clip-path: circle(0% bottom);
+  animation: revealRadial 1s ease-out forwards;
+}
+
+@keyframes revealRadial {
+  0% {
+    clip-path: circle(0% at bottom);
+  }
+  100% {
+    clip-path: circle(100% at bottom);
+  }
+}
+
+
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #E6E8FA;
+  margin-top: 20px;
+}
+
+
+.header {
+  text-align: center;
+  margin-top: 0; 
+  margin-bottom: 300px;
+  animation: slideInFromTop 2s ease-out;
+
+  top: 0; 
+  width: 100%;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.header.scrolled {
+  opacity: 0.5; 
+}
+
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title {
+  font-size: 120px;
+  margin: -20px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: #c1c1c1;
+}
+
+
+.features {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  margin-bottom: 100px;
+}
+
+.features.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+.sectionTitle {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.featureList {
+  list-style-type: disc;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.logica{
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  margin-bottom: 100px;
+}
+.logica.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logica-list{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+
+.automato {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  text-align: left;
+  margin-bottom: 100px;
+}
+
+.automato.visible{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column; 
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
+
+.lista.animate {
+  animation: slideInFromLeft 2s ease-out forwards; /* Use o nome correto da animação */
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+.geral{
+  font-size: 30px; 
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+  padding: 20px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+
+.systemDemo {
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  width: 100%; 
+  color: #777;
+}
